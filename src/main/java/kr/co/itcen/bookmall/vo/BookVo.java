@@ -14,14 +14,12 @@ public class BookVo {
 	
 	public BookVo() {}
 	
-	public BookVo(String book_name, int book_price, int ctgr_no, int dsct_no, String book_state, Date book_fromdd, Date book_todd) {
+	public BookVo(String book_name, int book_price, int ctgr_no, int dsct_no) {
 		this.book_name   = book_name;
 		this.book_price  = book_price;
 		this.ctgr_no     = ctgr_no;
 		this.dsct_no     = dsct_no;
-		this.book_state  = book_state;
-		this.book_fromdd = book_fromdd;
-		this.book_todd   = book_todd;
+
 	}
 	
 	public BookVo(String book_name, int book_no) {

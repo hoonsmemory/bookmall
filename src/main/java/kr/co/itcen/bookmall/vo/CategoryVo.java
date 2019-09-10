@@ -4,6 +4,17 @@ public class CategoryVo {
 	private int ctgr_no;
 	private String ctgr_name;
 	
+	public CategoryVo() {}
+	
+	public CategoryVo(String ctgr_name) {
+		this.ctgr_name = ctgr_name;
+	}
+	
+	public CategoryVo(String ctgr_name, int ctgr_no) {
+		this.ctgr_name = ctgr_name;
+		this.ctgr_no   = ctgr_no;
+	}
+	
 	public int getCtgr_no() {
 		return ctgr_no;
 	}

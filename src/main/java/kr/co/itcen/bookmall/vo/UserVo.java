@@ -12,6 +12,24 @@ public class UserVo {
 	private String user_fromdd;
 	private String user_todd;
 	
+	public UserVo() {}
+	
+	// insert 
+	public UserVo(String user_name, String user_sex, String user_pno, String user_email, String user_pw) {
+		this.user_name = user_name;
+		this.user_sex = user_sex;
+		this.user_pno = user_pno;
+		this.user_email = user_email;
+		this.user_pw = user_pw;
+	}
+	
+	// pno update
+	public UserVo(String user_pno, int user_no, String user_pw) {
+		this.user_pno = user_pno;
+		this.user_no  = user_no;
+		this.user_pw  = user_pw;
+	}
+	
 	public int getUser_no() {
 		return user_no;
 	}

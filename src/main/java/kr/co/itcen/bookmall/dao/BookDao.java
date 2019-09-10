@@ -22,16 +22,13 @@ public class BookDao {
 
 		try {
 			String sql = "insert into book(book_no, book_name, book_price, ctgr_no, dsct_no, book_state, book_fromdd, book_todd) "
-					+ "values(null, ?, ?, ?, ?, ?, ?, ?)";
+					+ "values(null, ?, ?, ?, ?, 'Y', now(), now())";
 
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, book.getBook_name());
 			pstmt.setInt(2, book.getBook_price());
 			pstmt.setInt(3, book.getCtgr_no());
 			pstmt.setInt(4, book.getDsct_no());
-			pstmt.setString(5, book.getBook_state());
-			pstmt.setDate(6, book.getBook_fromdd());
-			pstmt.setDate(7, book.getBook_todd());
 
 			int count = pstmt.executeUpdate();
 			result = (count == 1);
@@ -59,7 +56,7 @@ public class BookDao {
 				}
 
 				if (conn != null) {
-					conn.close();
+					//conn.close();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -115,7 +112,7 @@ public class BookDao {
 					pstmt.close();
 				}
 				if (conn != null) {
-					conn.close();
+					//conn.close();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -152,7 +149,7 @@ public class BookDao {
 					pstmt.close();
 				}
 				if (conn != null) {
-					conn.close();
+					//conn.close();
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -189,7 +186,7 @@ public class BookDao {
 					pstmt.close();
 				}
 				if (conn != null) {
-					conn.close();
+					//conn.close();
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

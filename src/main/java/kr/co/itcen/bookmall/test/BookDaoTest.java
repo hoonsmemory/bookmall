@@ -60,10 +60,12 @@ public class BookDaoTest {
 
 	public static void main(String[] args) {
 		BookDaoTest book = new BookDaoTest();
+		//book.book_Insert(new BookVo("book_name", 20000, 2, 1));
 		//book.book_Update(new BookVo("데이터베이스책",2));
-		//book.book_Insert(new BookVo("book_name", 10000, 1, 1, "Y", time1, new Date(0)));
-		book.book_Delete(2);
+		//book.book_Delete(16);
 		book.book_GetList();
+		
+
 		
 		
 	}
