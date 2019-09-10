@@ -30,6 +30,11 @@ public class UserVo {
 		this.user_pw  = user_pw;
 	}
 	
+	public UserVo(int user_no, String user_pw) {
+		this.user_no = user_no;
+		this.user_pw = user_pw;	
+	}
+	
 	public int getUser_no() {
 		return user_no;
 	}

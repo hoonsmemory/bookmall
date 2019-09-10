@@ -164,17 +164,18 @@ public class UserDao {
 		return result;
 	}
 
-	public boolean category_Delete(int category_no){
+	public boolean user_Delete(UserVo user){
 		Boolean result = false;
 
 		try {
 
-			String sql = "delete from category where ctgr_no = ?";
+			String sql = "update user set user_state = 'N' , user_todd = now() where user_no = ? and user_pw = ?";
 			pstmt = conn.prepareStatement(sql);
 
 			// 4. 바인딩
-			pstmt.setLong(1, category_no);
-
+			pstmt.setInt(1, user.getUser_no());
+			pstmt.setString(2, user.getUser_pw());
+			
 			// 5. SQL문 실행
 			int count = pstmt.executeUpdate();
 
