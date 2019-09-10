@@ -14,7 +14,7 @@ public class UserVo {
 	
 	public UserVo() {}
 	
-	// insert 
+	// 유저회원가입
 	public UserVo(String user_name, String user_sex, String user_pno, String user_email, String user_pw) {
 		this.user_name = user_name;
 		this.user_sex = user_sex;
@@ -23,7 +23,7 @@ public class UserVo {
 		this.user_pw = user_pw;
 	}
 	
-	// pno update
+	// 폰넘버 변경
 	public UserVo(String user_pno, int user_no, String user_pw) {
 		this.user_pno = user_pno;
 		this.user_no  = user_no;

@@ -7,6 +7,17 @@ public class CartVo {
 	private int book_count;
 	private int user_no;
 	private String cart_state;
+	
+	public CartVo() {}
+	
+	//카트 담기
+	public CartVo(int user_no, int book_no, int book_count) {
+		this.user_no    = user_no;
+		this.book_no    = book_no;
+		this.book_count = book_count;		
+	}
+	
+
 	public int getCart_no() {
 		return cart_no;
 	}

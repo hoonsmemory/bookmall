@@ -8,6 +8,23 @@ public class OrderVo {
 	private int user_no;
 	private int order_state;
 	
+	public OrderVo(){
+		
+	}
+
+	//주문 생성
+	public OrderVo(int order_price, String order_adress, int user_no){
+		this.order_price = order_price;
+		this.order_adress = order_adress;
+		this.user_no = user_no;
+	}	
+	
+	//주문 취소
+	public OrderVo(int user_no, int order_no){
+		this.user_no  = user_no;
+		this.order_no = order_no; 
+	}	
+	
 	public int getOrder_no() {
 		return order_no;
 	}
