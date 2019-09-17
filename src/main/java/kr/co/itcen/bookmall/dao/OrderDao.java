@@ -94,11 +94,11 @@ public class OrderDao {
 				String order_adress = rs.getString(5);
 				ArrayList tmp =  new ArrayList();
 				
-				tmp.add(order_no);
-				tmp.add(user_name);
-				tmp.add(user_email);
-				tmp.add(order_price);
-				tmp.add(order_adress);
+				tmp.add("주문 번호 = " + order_no);
+				tmp.add("주문자 이름 = " + user_name);
+				tmp.add("주문자 이메일 = " + user_email);
+				tmp.add("주문 가격 = " + order_price);
+				tmp.add("주문자 주소 = " + order_adress);
 				
 				result.add(tmp);
 			}

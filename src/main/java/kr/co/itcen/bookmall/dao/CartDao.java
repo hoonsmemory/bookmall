@@ -79,7 +79,7 @@ public class CartDao {
 		
 		try {
 	
-			String sql = "select user.user_name, book.book_name, cart.book_count, cart.book_count * book.book_price" + 
+			String sql = "select user.user_no, user.user_name, book.book_name, cart.book_count, cart.book_count * book.book_price" + 
 					" from user , book, cart" + 
 					" where 1 = 1 " + 
 					" and user.user_no = cart.user_no"  + 
@@ -91,17 +91,20 @@ public class CartDao {
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-
-				String user_name = rs.getString(1);
-				String book_name = rs.getString(2);
-				int book_count   = rs.getInt(3);
-				int all_price    = rs.getInt(4);
+				
+				int user_no   = rs.getInt(1);
+				String user_name = rs.getString(2);
+				String book_name = rs.getString(3);
+				int book_count   = rs.getInt(4);
+				int all_price    = rs.getInt(5);
+				
 				ArrayList tmp =  new ArrayList();
 				
-				tmp.add(user_name);
-				tmp.add(book_name);
-				tmp.add(book_count);
-				tmp.add(all_price);
+				tmp.add("유저 번호 = " + user_no);
+				tmp.add("유저 이름 = " + user_name);
+				tmp.add("책 이름 = " + book_name);
+				tmp.add("카트 수량 = " + book_count);
+				tmp.add("전체 가격 = " + all_price);
 				result.add(tmp);
 			}
 			

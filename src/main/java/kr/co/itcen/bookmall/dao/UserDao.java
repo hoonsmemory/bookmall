@@ -77,31 +77,26 @@ public class UserDao {
 		List<UserVo> result = new ArrayList<UserVo>();
 
 		try {
-			String sql = "select * from user where user_state = 'Y'order by user_no asc";
+			String sql = "select user_name,user_pno, user_email, user_pw"
+					   + " from user where user_state = 'Y'order by user_no asc";
 
 			pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-
-				int user_no       = rs.getInt(1);
-				String user_name  = rs.getString(2);
-				String user_sex   = rs.getString(3);
-				String user_pno   = rs.getString(4);
-				String user_email = rs.getString(5);
-				//String user_pw    = rs.getString(6);
-				int rate_no    = rs.getInt(7);
+				String user_name  = rs.getString(1);
+				String user_pno   = rs.getString(2);
+				String user_email = rs.getString(3);
+				String user_pw    = rs.getString(4);
 				
 				UserVo user = new UserVo();
 
-				user.setUser_no(user_no);
 				user.setUser_name(user_name);
-				user.setUser_sex(user_sex);
 				user.setUser_pno(user_pno);
 				user.setUser_email(user_email);
-				user.setRate_no(rate_no);		
-
+				user.setUser_pw(user_pw);
+		
 				result.add(user);
 			}
 		} catch (SQLException e) {

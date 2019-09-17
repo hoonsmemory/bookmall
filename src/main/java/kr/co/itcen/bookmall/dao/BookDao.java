@@ -66,40 +66,32 @@ public class BookDao {
 		return result;
 	}
 
-	public List<BookVo> book_GetList() {
-		List<BookVo> result = new ArrayList<BookVo>();
-
+	public ArrayList book_GetList() {
+		ArrayList result = new ArrayList();
+	
 		try {
-			// book_no, book_name, book_price, ctgr_no, dsct_no, book_state, book_fromdd,
-			// book_todd
-			String sql = "select * from book where book_state = 'Y'  order by book_no asc";
+			String sql = "select book_name, book_price, ctgr_name" + 
+						 " from book, category" + 
+						 " where book_state = 'Y'" + 
+						 " and book.ctgr_no = category.ctgr_no" + 
+						 " order by book_no asc";
 
 			pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				int no = rs.getInt(1);
-				String name = rs.getString(2);
-				int price = rs.getInt(3);
-				int ctgr_no = rs.getInt(4);
-				int dsct_no = rs.getInt(5);
-				String state = rs.getString(6);
-				Date fromdd = rs.getDate(7);
-				Date todd = rs.getDate(8);
+				String name = rs.getString(1);
+				int price = rs.getInt(2);
+				String ctgr_name = rs.getString(3);
 
-				BookVo book = new BookVo();
+				ArrayList tmp =  new ArrayList();
 
-				book.setBook_no(no);
-				book.setBook_name(name);
-				book.setBook_price(price);
-				book.setCtgr_no(ctgr_no);
-				book.setDsct_no(dsct_no);
-				book.setBook_state(state);
-				book.setBook_fromdd(fromdd);
-				book.setBook_todd(todd);
+				tmp.add("책이름 = " + name);
+				tmp.add("가격 = " + price + "원");
+				tmp.add("카테고리 = " + ctgr_name);
 
-				result.add(book);
+				result.add(tmp);
 			}
 		} catch (SQLException e) {
 			System.out.println("error:" + e);

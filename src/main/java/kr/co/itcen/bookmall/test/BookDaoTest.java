@@ -7,6 +7,7 @@ import kr.co.itcen.bookmall.vo.BookVo;
 import java.sql.Connection;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,7 +34,7 @@ public class BookDaoTest {
 
 	}
 
-	//도서 저장
+	//도서 저장(도서이름, 도서가격, 카테고리, 할인율)
 	private void book_Insert(BookVo vo) {
 		book.book_Insert(vo);	
 	}
@@ -41,10 +42,10 @@ public class BookDaoTest {
 	//도서리스트 출력
 	private void book_GetList() {
 		
-		List<BookVo> list = book.book_GetList();
+		ArrayList list =  book.book_GetList();
 		
-		for(BookVo vo : list) {
-			System.out.println(vo);
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
 		}
 	}
 	
@@ -60,14 +61,12 @@ public class BookDaoTest {
 
 	public static void main(String[] args) {
 		BookDaoTest book = new BookDaoTest();
-		//book.book_Insert(new BookVo("book_name", 20000, 2, 1));
+		//book.book_Insert(new BookVo("소설책", 14000, 1, 1));
 		//book.book_Update(new BookVo("데이터베이스책",2));
 		//book.book_Delete(16);
 		book.book_GetList();
 		
-
-		
-		
+	
 	}
 
 }

@@ -4,19 +4,20 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import kr.co.itcen.bookmall.dao.ConnectionPool;
+import kr.co.itcen.bookmall.dao.OrderBookDao;
 import kr.co.itcen.bookmall.dao.OrderDao;
+import kr.co.itcen.bookmall.vo.OrderBookVo;
 import kr.co.itcen.bookmall.vo.OrderVo;
 
-
-public class OrderDaoTest {
-	private OrderDao order = null;
+public class OrderBookDaoTest {
+	private OrderBookDao orderBook = null;
 	private Connection conn = null;
 	
-	private OrderDaoTest()
+	private OrderBookDaoTest()
 	{
 		try {
 			connectDB();
-			order = new OrderDao(conn);
+			orderBook = new OrderBookDao(conn);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,15 +31,15 @@ public class OrderDaoTest {
 
 	}
 	
-	//주문서 저장(가격,주소,유저번호)
-	private void order_Insert(OrderVo vo) {
-		order.order_Insert(vo);	
+	// 주문한 책 저장(책번호, 책수량, 유저번호)
+	private void orderBook_Insert(OrderBookVo vo) {
+		orderBook.orderBook_Insert(vo);	
 	}
 	
-	//전체 주문리스트 출력(주문번호, 주문자, 이메일, 결제금액, 배송지)
-	private void order_GetList() {
+	// 주문한 책 목록
+	private void orderBook_GetList() {
 		
-		ArrayList list = order.order_GetList();
+		ArrayList list = orderBook.orderBook_GetList();
 		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
@@ -46,16 +47,10 @@ public class OrderDaoTest {
 		
 	}
 	
-	//주문 취소 
-	private void order_Delete(OrderVo vo) {
-		order.order_Delete(vo);
-	}
-	
 	public static void main(String[] args) {
-		OrderDaoTest order = new OrderDaoTest();
-		//order.order_Insert(new OrderVo(200000, "서울비트교육센터", 1));
-		//order.order_Delete(new OrderVo(1,1));
-		
-		order.order_GetList();
+		OrderBookDaoTest orderBook = new OrderBookDaoTest();
+		//orderBook.orderBook_Insert(new OrderBookVo(18, 7, 1));
+		orderBook.orderBook_GetList();
+
 	}
 }

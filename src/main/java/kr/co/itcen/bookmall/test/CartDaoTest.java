@@ -32,8 +32,8 @@ public class CartDaoTest {
 		conn = ConnectionPool.getInstance();
 
 	}
-	
-	//카트 담기
+
+	//카트 담기(유저번호, 책번호, 수량)
 	private void cart_Insert(CartVo vo) {
 		cart.cart_Insert(vo);	
 	}
@@ -58,8 +58,8 @@ public class CartDaoTest {
 	
 	
 	public static void main(String[] args) {
-		CartDaoTest cart = new CartDaoTest();
-		//cart.cart_Insert(new CartVo(1,2,5));
+		CartDaoTest cart = new CartDaoTest();		
+		//cart.cart_Insert(new CartVo(2,21,5));
 		//cart.cart_Update(new CartVo(1, 2, 10));
 		cart.cart_GetList();
 		

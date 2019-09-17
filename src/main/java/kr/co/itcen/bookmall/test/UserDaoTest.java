@@ -64,6 +64,7 @@ public class UserDaoTest {
 	public static void main(String[] args) {
 		UserDaoTest user = new UserDaoTest();
 		//user.user_Insert(new UserVo("김성훈", "W", "01039173386", "dltjdgnsok1@naver.com", "1234"));
+		//user.user_Insert(new UserVo("이성훈", "M", "01012345678", "bit123@gmail.com", "1234"));
 		//user.user_Update(new UserVo("01012345678",1,"1234"));
 		//user.user_Delete(new UserVo(1,"1234"));
 		user.user_GetList();

@@ -98,9 +98,7 @@ public class UserVo {
 	
 	@Override
 	public String toString() {
-		return "UserVo [user_no=" + user_no + ", user_name=" + user_name + ", user_sex=" + user_sex + ", user_pno="
-				+ user_pno + ", user_email=" + user_email + ", user_pw=" + user_pw + ", rate_no=" + rate_no
-				+ ", user_state=" + user_state + ", user_fromdd=" + user_fromdd + ", user_todd=" + user_todd + "]";
+		return "[이름 = " + user_name + ", 연락처  = " + user_pno + ", 이메일 = " + user_email + ", 패스워드 = " + user_pw +"]";
 	}
 	
 }
