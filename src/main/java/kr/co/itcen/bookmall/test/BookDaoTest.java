@@ -16,7 +16,7 @@ public class BookDaoTest {
 	private BookDao book = null;
 	private Connection conn = null;
 	
-	private BookDaoTest()
+	public BookDaoTest()
 	{
 		try {
 			connectDB();
@@ -28,19 +28,19 @@ public class BookDaoTest {
 		} 
 	}
 	
-	private void connectDB() throws Exception
+	public void connectDB() throws Exception
 	{
 		conn = ConnectionPool.getInstance();
 
 	}
 
 	//도서 저장(도서이름, 도서가격, 카테고리, 할인율)
-	private void book_Insert(BookVo vo) {
+	public void book_Insert(BookVo vo) {
 		book.book_Insert(vo);	
 	}
 	
 	//도서리스트 출력
-	private void book_GetList() {
+	public void book_GetList() {
 		
 		ArrayList list =  book.book_GetList();
 		
@@ -50,12 +50,12 @@ public class BookDaoTest {
 	}
 	
 	//도서 변경
-	private void book_Update(BookVo vo) {
+	public void book_Update(BookVo vo) {
 		book.book_Update(vo);
 	}
 	
 	//도서 삭제
-	private void book_Delete(int book_no) {
+	public void book_Delete(int book_no) {
 		book.book_Delete(book_no);
 	}
 

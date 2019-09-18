@@ -17,7 +17,7 @@ public class UserDaoTest {
 	private UserDao user = null;
 	private Connection conn = null;
 	
-	private UserDaoTest()
+	public UserDaoTest()
 	{
 		try {
 			connectDB();
@@ -29,19 +29,19 @@ public class UserDaoTest {
 		} 
 	}
 	
-	private void connectDB() throws Exception
+	public void connectDB() throws Exception
 	{
 		conn = ConnectionPool.getInstance();
 
 	}
 	
 	//유저 저장
-	private void user_Insert(UserVo vo) {
+	public void user_Insert(UserVo vo) {
 		user.user_Insert(vo);	
 	}
 	
 	//유저리스트 출력
-	private void user_GetList() {
+	public void user_GetList() {
 		
 		List<UserVo> list = user.user_GetList();
 		
@@ -51,12 +51,12 @@ public class UserDaoTest {
 	}
 	
 	//유저 핸드폰번호 변경
-	private void user_Update(UserVo vo) {
+	public void user_Update(UserVo vo) {
 		user.user_Update(vo);
 	}
 	
 	//유저 삭제 
-	private void user_Delete(UserVo vo) {
+	public void user_Delete(UserVo vo) {
 		user.user_Delete(vo);
 	}
 	

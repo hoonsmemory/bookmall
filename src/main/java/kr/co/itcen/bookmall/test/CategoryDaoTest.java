@@ -14,7 +14,7 @@ public class CategoryDaoTest {
 	private CategoryDao category = null;
 	private Connection conn = null;
 	
-	private CategoryDaoTest()
+	public CategoryDaoTest()
 	{
 		try {
 			connectDB();
@@ -26,19 +26,19 @@ public class CategoryDaoTest {
 		} 
 	}
 	
-	private void connectDB() throws Exception
+	public void connectDB() throws Exception
 	{
 		conn = ConnectionPool.getInstance();
 
 	}
 	
 	//카테고리 저장
-	private void category_Insert(CategoryVo vo) {
+	public void category_Insert(CategoryVo vo) {
 		category.category_Insert(vo);	
 	}
 	
 	//카테고리리스트 출력
-	private void category_GetList() {
+	public void category_GetList() {
 		
 		List<CategoryVo> list = category.category_GetList();
 		
@@ -48,12 +48,12 @@ public class CategoryDaoTest {
 	}
 	
 	//카테고리 변경
-	private void category_Update(CategoryVo vo) {
+	public void category_Update(CategoryVo vo) {
 		category.category_Update(vo);
 	}
 	
 	//도서 삭제
-	private void category_Delete(int category_no) {
+	public void category_Delete(int category_no) {
 		category.category_Delete(category_no);
 	}
 	

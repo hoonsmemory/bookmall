@@ -15,7 +15,7 @@ public class CartDaoTest {
 	private CartDao cart = null;
 	private Connection conn = null;
 	
-	private CartDaoTest()
+	public CartDaoTest()
 	{
 		try {
 			connectDB();
@@ -27,19 +27,19 @@ public class CartDaoTest {
 		} 
 	}
 	
-	private void connectDB() throws Exception
+	public void connectDB() throws Exception
 	{
 		conn = ConnectionPool.getInstance();
 
 	}
 
 	//카트 담기(유저번호, 책번호, 수량)
-	private void cart_Insert(CartVo vo) {
+	public void cart_Insert(CartVo vo) {
 		cart.cart_Insert(vo);	
 	}
 	
 	//전체 카트리스트 출력(유저이름, 책이름, 구매수)
-	private void cart_GetList() {
+	public void cart_GetList() {
 		
 		ArrayList list =  cart.cart_GetList();
 		
@@ -50,7 +50,7 @@ public class CartDaoTest {
 	}
 	
 	//카트 수량 변경
-	private void cart_Update(CartVo vo) {
+	public void cart_Update(CartVo vo) {
 		cart.cart_Update(vo);
 	}
 	

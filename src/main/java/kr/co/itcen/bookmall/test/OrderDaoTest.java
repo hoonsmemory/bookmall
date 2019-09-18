@@ -12,7 +12,7 @@ public class OrderDaoTest {
 	private OrderDao order = null;
 	private Connection conn = null;
 	
-	private OrderDaoTest()
+	public OrderDaoTest()
 	{
 		try {
 			connectDB();
@@ -24,19 +24,19 @@ public class OrderDaoTest {
 		} 
 	}
 	
-	private void connectDB() throws Exception
+	public void connectDB() throws Exception
 	{
 		conn = ConnectionPool.getInstance();
 
 	}
 	
 	//주문서 저장(가격,주소,유저번호)
-	private void order_Insert(OrderVo vo) {
+	public void order_Insert(OrderVo vo) {
 		order.order_Insert(vo);	
 	}
 	
 	//전체 주문리스트 출력(주문번호, 주문자, 이메일, 결제금액, 배송지)
-	private void order_GetList() {
+	public void order_GetList() {
 		
 		ArrayList list = order.order_GetList();
 		
@@ -47,7 +47,7 @@ public class OrderDaoTest {
 	}
 	
 	//주문 취소 
-	private void order_Delete(OrderVo vo) {
+	public void order_Delete(OrderVo vo) {
 		order.order_Delete(vo);
 	}
 	

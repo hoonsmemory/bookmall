@@ -13,7 +13,7 @@ public class OrderBookDaoTest {
 	private OrderBookDao orderBook = null;
 	private Connection conn = null;
 	
-	private OrderBookDaoTest()
+	public OrderBookDaoTest()
 	{
 		try {
 			connectDB();
@@ -25,19 +25,19 @@ public class OrderBookDaoTest {
 		} 
 	}
 	
-	private void connectDB() throws Exception
+	public void connectDB() throws Exception
 	{
 		conn = ConnectionPool.getInstance();
 
 	}
 	
 	// 주문한 책 저장(책번호, 책수량, 유저번호)
-	private void orderBook_Insert(OrderBookVo vo) {
+	public void orderBook_Insert(OrderBookVo vo) {
 		orderBook.orderBook_Insert(vo);	
 	}
 	
 	// 주문한 책 목록
-	private void orderBook_GetList() {
+	public void orderBook_GetList() {
 		
 		ArrayList list = orderBook.orderBook_GetList();
 		
